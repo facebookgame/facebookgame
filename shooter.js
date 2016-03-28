@@ -58,17 +58,16 @@ App = function()
         var highScore = (shooterData && shooterData.highScore) || 0;
 
         // main menu text
-        var clickText = new TextSprite('Click or tap to start', '32px Verdana', 'white', 'center');
+        var clickText = new TextSprite('Game will start in 2 seconds', '32px Verdana', 'white', 'center');
         clickText.setDrawFunction(wade.drawFunctions.blink_(0.5, 0.5, clickText.draw));
         var clickToStart = new SceneObject(clickText);
         clickToStart.addSprite(new TextSprite('Your best score is ' + highScore, '18px Verdana', 'yellow', 'center'), {y: 30});
         wade.addSceneObject(clickToStart);
-        wade.app.onMouseDown = function()
-        {
+        setTimeout(function(){
             wade.removeSceneObject(clickToStart);
             wade.app.startGame();
             wade.app.onMouseDown = 0;
-        };
+        }, 2000);
     };
 
     this.startGame = function()
