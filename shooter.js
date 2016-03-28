@@ -24,7 +24,7 @@ App = function()
         wade.setMinScreenSize(708, 398);
         wade.setMaxScreenSize(708, 398);
 
-        // create background
+        /*
         var backSprite = new Sprite(0, 11);
         backSprite.setSize(wade.getScreenWidth(), wade.getScreenHeight());
         backSprite.setDrawFunction(wade.drawFunctions.solidFill_('#f600f9'));
@@ -52,7 +52,7 @@ App = function()
                 this.moveTo(posX, wade.getScreenHeight() / 2 + size / 2, 20);
             };
         }
-
+        */
         // load high score
         var shooterData = wade.retrieveLocalObject('shooterData');
         var highScore = (shooterData && shooterData.highScore) || 0;
